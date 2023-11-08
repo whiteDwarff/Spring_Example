@@ -5,6 +5,8 @@ import hello.hellospring.domain.Member;
 import java.util.List;
 import java.util.Optional;
 
+
+// interface : 사용할 메서드를 정의 
 public interface MemberRepository {
     Member save(Member member);
 
