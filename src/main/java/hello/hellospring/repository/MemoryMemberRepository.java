@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 // interface에서 선언한 메서드를 구현
 // Repository 데이터를 관리하는 객체 DAO
-@Repository
+//@Repository
 public class MemoryMemberRepository implements MemberRepository{
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;

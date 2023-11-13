@@ -65,5 +65,9 @@ class MemberServiceTest {
 
     @Test
     void findOne() {
+          Member member = new Member();
+          Long result = memberService.join(member);
+          System.out.println(result);
+          assertThat(result).isEqualTo(2);
     }
 }

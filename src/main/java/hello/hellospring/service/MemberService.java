@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 // 1. @Service 등록
-@Service // == @Component
+//@Service // == @Component
 public class MemberService {
     private final MemberRepository memberRepository;
 
@@ -21,7 +21,7 @@ public class MemberService {
          2. memberRepository 의존성 주입
          -> memberService는 memberRepository가 필요하다 ~~
     */
-    @Autowired
+    //@Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
