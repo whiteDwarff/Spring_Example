@@ -45,7 +45,7 @@ class MemberServiceTest {
         member1.setName("spring");
 
         Member member2 = new Member();
-        member2.setName("spring");
+        member2.setName("spring1");
 
         // when
         memberService.join(member1);

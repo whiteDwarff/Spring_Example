@@ -4,12 +4,16 @@ import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 // 1. @Service 등록
 //@Service // == @Component
+
+// @Transactional 데이터를 저장하거나 변경할 때 필요하다.
+@Transactional
 public class MemberService {
     private final MemberRepository memberRepository;
 
@@ -28,8 +32,7 @@ public class MemberService {
 
     // 회원가입
     public Long join(Member member) {
-
-        valiedateDuplicateMember(member); // 중복회원 검증
+        valiedateDuplicateMember(member);
         memberRepository.save(member);
         return member.getId();
     }
@@ -44,7 +47,7 @@ public class MemberService {
     }
     // 전체 회원 조회
     public List<Member> findMembers() {
-       return memberRepository.findAll();
+        return memberRepository.findAll();
     }
 
     public Optional<Member> findOne(Long memberId) {
